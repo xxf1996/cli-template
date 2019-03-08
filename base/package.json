@@ -1,6 +1,7 @@
 {
-  "name": "template-test",
-  "version": "0.1.0",
+  "name": "<%= projectName %>",
+  "version": "<%= projectVer %>",
+  "description": "<%= projectDesc %>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
