@@ -1,6 +1,14 @@
-import demo from './modules/demo'
-
 import layoutHeaderAside from '@/layout/header-aside'
+
+const files = require.context('./', false)
+const modules = []
+
+files.keys().forEach(key => {
+  if (!/\.js$/.test(key)) {
+    // let name = key.replace(/(\.\/)/g, '')
+    modules.push(files(key).default)
+  }
+})
 
 /**
  * 在主框架内显示
@@ -46,7 +54,7 @@ const frameIn = [
       }
     ]
   },
-  demo
+  ...modules
 ]
 
 /**
