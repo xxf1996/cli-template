@@ -9,5 +9,5 @@ export default {
   meta,
   redirect: { name: 'index' },
   component: layoutHeaderAside,
-  children: getChildren()
+  children: getChildren(require.context(`./`, false, /\.js$/))
 }

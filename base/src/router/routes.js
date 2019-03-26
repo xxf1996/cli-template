@@ -1,11 +1,11 @@
 import layoutHeaderAside from '@/layout/header-aside'
 
-const files = require.context('./', false)
-const modules = []
+const files = require.context('./', true, /\/index\.js$/) // 获取路由目录下的子目录index.js文件（即一级路由及其子路由配置信息）
+const modules = [] // 其它自动解析的一级路由信息
 
 files.keys().forEach(key => {
-  if (!/\.js$/.test(key)) {
-    // let name = key.replace(/(\.\/)/g, '')
+  if (key !== './index.js') { // 过滤当层index.js文件
+    // console.log(key)
     modules.push(files(key).default)
   }
 })

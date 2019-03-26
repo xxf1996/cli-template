@@ -1,6 +1,6 @@
 export default {
   path: '<%= pageRoute %>',
   name: '<%= pageName %>',
-  componentSrc: '<%= pageSrc %>',
+  component: () => import('<%= pageSrc %>'),
   title: '<%= pageTitle %>'
 }
