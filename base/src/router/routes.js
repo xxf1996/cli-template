@@ -26,7 +26,7 @@ const frameIn = [
         meta: {
           auth: true
         },
-        component: () => import('@/pages/index')
+        component: () => import('@/pages/index/Index')
       },
       // 刷新页面 必须保留
       {
@@ -65,7 +65,7 @@ const frameOut = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/pages/login')
+    component: () => import('@/pages/login/Index')
   }
 ]
 
@@ -77,7 +77,7 @@ const errorPage = [
   {
     path: '*',
     name: '404',
-    component: () => import('@/pages/error-page-404')
+    component: () => import('@/pages/error-page-404/Index')
   }
 ]
 

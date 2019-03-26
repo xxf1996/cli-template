@@ -1,6 +1,7 @@
 export default function getChildren () {
   const files = require.context('./', false, /\.js$/)
   const children = []
+  const meta = { auth: true }
 
   files.keys().forEach(key => {
     let name = key.replace(/(\.\/|\.js)/g, '')
